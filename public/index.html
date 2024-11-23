@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word to PDF Converter</title>
+</head>
+<body>
+    <h1>Convert Word Document to PDF</h1>
+    <form id="uploadForm" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Word Document (.docx):</label>
+        <input type="file" id="file" name="file" accept=".docx" required><br><br>
+        <button type="submit">Convert to PDF</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docx to PDF Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    form {
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 50%;
+      background-color: #f9f9f9;
+    }
+    input[type="file"] {
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h1>Docx to PDF Converter</h1>
+  <p>Upload a .docx file, and we'll convert it to PDF for you!</p>
+  <form id="uploadForm">
+    <input type="file" id="docxFile" accept=".docx" required />
+    <br />
+    <button type="submit">Convert to PDF</button>
+  </form>
+  <p id="status"></p>
+
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fileInput = document.getElementById("docxFile");
+      const status = document.getElementById("status");
+      status.textContent = "Uploading and converting...";
+
+      if (!fileInput.files[0]) {
+        status.textContent = "Please select a .docx file.";
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("docxFile", fileInput.files[0]);
+
+      try {
+        const response = await fetch("/convert", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to convert file");
+        }
+
+        // Create a blob for the downloaded file
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "converted.pdf";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        status.textContent = "File converted successfully!";
+      } catch (error) {
+        console.error(error);
+        status.textContent = "An error occurred. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html> -->
