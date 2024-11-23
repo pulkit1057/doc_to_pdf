@@ -69,10 +69,7 @@
   <form action="/docxtopdf" method="post" enctype="multipart/form-data">
     <label for="file">Upload Word Document (.docx):</label><br>
     <input type="file" id="file" name="file" accept=".docx" required><br><br>
-
-    <!-- <label for="pass_protected">Password protected pdf</label>
-    <input type="checkbox" name="pass_protected" id=""><br><br>
-    <input type="text"><br><br> -->
+    
 
     <input type="checkbox"
       onclick="var input = document.getElementById('pass_protected'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Keep pdf password protected <br><br>
